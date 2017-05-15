@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <title>Node-Link Tree</title>
-    <script src="http://mbostock.github.com/d3/d3.v2.js"></script>
-    <style type="text/css">
-
-.node circle {
-  cursor: pointer;
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1.5px;
-}
-
-.node text {
-  font: 10px sans-serif;
-}
-
-path.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
-}
-
-    </style>
-  </head>
-  <body>
-    <div id="chart"></div>
-    <script type="text/javascript">
-
-var margin = {top: 30, right: 10, bottom: 10, left: 10},
-    width = 960 - margin.left - margin.right,
+var margin = {top: 20, right: 10, bottom: 10, left: 10},
+    width = 1500 - margin.left - margin.right,
     halfWidth = width / 2,
-    height = 500 - margin.top - margin.bottom,
+    height = 550 - margin.top - margin.bottom,
     i = 0,
     duration = 500,
     root;
@@ -54,8 +23,7 @@ var getChildren = function(d){
     ;
 
 var tree = d3.layout.tree()
-    .size([height, width])
-    ;
+    .size([height, width]);
 
 var diagonal = d3.svg.diagonal()
     .projection(function(d) { return [d.y, d.x]; });
@@ -85,7 +53,7 @@ var vis = d3.select("#chart").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("bracket.json", function(json) {
+d3.json("2017m.json", function(json) {
   root = json;
   root.x0 = height / 2;
   root.y0 = width / 2;
@@ -119,7 +87,7 @@ function update(source) {
   var nodes = toArray(source);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 180 + halfWidth; });
+  nodes.forEach(function(d) { d.y = d.depth * 120 + halfWidth; });
 
   // Update the nodes…
   var node = vis.selectAll("g.node")
@@ -131,40 +99,26 @@ function update(source) {
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
       .on("click", click);
 
-  nodeEnter.append("circle")
-      .attr("r", 1e-6)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
   nodeEnter.append("text")
-      .attr("dy", function(d) { return d.isRight?14:-8;})
+      .attr("dy", -7)
       .attr("text-anchor", "middle")
       .text(function(d) { return d.name; })
-      .style("fill-opacity", 1e-6);
+      .style('fill', function() {
+        // TODO: color text according to result of a match
+        return "black";
+      });
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
       .duration(duration)
-      .attr("transform", function(d) { p = calcLeft(d); return "translate(" + p.y + "," + p.x + ")"; })
-      ;
+      .attr("transform", function(d) { p = calcLeft(d); return "translate(" + p.y + "," + p.x + ")"; });
 
-  nodeUpdate.select("circle")
-      .attr("r", 4.5)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-  nodeUpdate.select("text")
-      .style("fill-opacity", 1);
 
   // Transition exiting nodes to the parent's new position.
   var nodeExit = node.exit().transition()
       .duration(duration)
       .attr("transform", function(d) { p = calcLeft(d.parent||source); return "translate(" + p.y + "," + p.x + ")"; })
       .remove();
-
-  nodeExit.select("circle")
-      .attr("r", 1e-6);
-
-  nodeExit.select("text")
-      .style("fill-opacity", 1e-6);
 
   // Update the links...
   var link = vis.selectAll("path.link")
@@ -213,8 +167,3 @@ function update(source) {
     update(source);
   }
 }
-
-
-    </script>
-  </body>
-</html>
