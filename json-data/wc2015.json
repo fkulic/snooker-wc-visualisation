@@ -1,0 +1,253 @@
+{
+  "name": "Stuart Bingham",
+  "winners": [
+    {
+      "name": "Shaun Murphy",
+      "winners": [
+        {
+          "name": "Shaun Murphy",
+          "winners": [
+            {
+              "name": "Anthony McGill",
+              "winners": [
+                {
+                  "name": "Mark Selby",
+                  "winners": [
+                    {
+                      "name": "Mark Selby"
+                    },
+                    {
+                      "name": "Kurt Maflin"
+                    }
+                  ]
+                },
+                {
+                  "name": "Anthony McGill",
+                  "winners": [
+                    {
+                      "name": "Stephen Maguire"
+                    },
+                    {
+                      "name": "Anthony McGill"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Shaun Murphy",
+              "winners": [
+                {
+                  "name": "Joe Perry",
+                  "winners": [
+                    {
+                      "name": "Joe Perry"
+                    },
+                    {
+                      "name": "Anda Zhang"
+                    }
+                  ]
+                },
+                {
+                  "name": "Shaun Murphy",
+                  "winners": [
+                    {
+                      "name": "Shaun Murphy"
+                    },
+                    {
+                      "name": "Robin Hull"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Barry Hawkins",
+          "winners": [
+            {
+              "name": "Barry Hawkins",
+              "winners": [
+                {
+                  "name": "Barry Hawkins",
+                  "winners": [
+                    {
+                      "name": "Barry Hawkins"
+                    },
+                    {
+                      "name": "Matthew Selt"
+                    }
+                  ]
+                },
+                {
+                  "name": "Mark Allen",
+                  "winners": [
+                    {
+                      "name": "Mark Allen"
+                    },
+                    {
+                      "name": "Ryan Day"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Neil Robertson",
+              "winners": [
+                {
+                  "name": "Allister Carter",
+                  "winners": [
+                    {
+                      "name": "Allister Carter"
+                    },
+                    {
+                      "name": "Alan McManus"
+                    }
+                  ]
+                },
+                {
+                  "name": "Neil Robertson",
+                  "winners": [
+                    {
+                      "name": "Neil Robertson"
+                    },
+                    {
+                      "name": "Jamie Jones"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "challengers": [
+    {
+      "name": "Stuart Bingham",
+      "challengers": [
+        {
+          "name": "Judd Trump",
+          "challengers": [
+            {
+              "name": "Junhui Ding",
+              "challengers": [
+                {
+                  "name": "Junhui Ding",
+                  "challengers": [
+                    {
+                      "name": "Junhui Ding"
+                    },
+                    {
+                      "name": "Mark Davis"
+                    }
+                  ]
+                },
+                {
+                  "name": "John Higgins",
+                  "challengers": [
+                    {
+                      "name": "John Higgins"
+                    },
+                    {
+                      "name": "Robert Milkins"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Judd Trump",
+              "challengers": [
+                {
+                  "name": "Marco Fu",
+                  "challengers": [
+                    {
+                      "name": "Marco Fu"
+                    },
+                    {
+                      "name": "Jimmy Robertson"
+                    }
+                  ]
+                },
+                {
+                  "name": "Judd Trump",
+                  "challengers": [
+                    {
+                      "name": "Judd Trump"
+                    },
+                    {
+                      "name": "Stuart Carrington"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stuart Bingham",
+          "challengers": [
+            {
+              "name": "Stuart Bingham",
+              "challengers": [
+                {
+                  "name": "Graeme Dott",
+                  "challengers": [
+                    {
+                      "name": "Ricky Walden"
+                    },
+                    {
+                      "name": "Graeme Dott"
+                    }
+                  ]
+                },
+                {
+                  "name": "Stuart Bingham",
+                  "challengers": [
+                    {
+                      "name": "Stuart Bingham"
+                    },
+                    {
+                      "name": "Robbie Williams"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Ronnie O\u0027Sullivan",
+              "challengers": [
+                {
+                  "name": "Matthew Stevens",
+                  "challengers": [
+                    {
+                      "name": "Mark Williams"
+                    },
+                    {
+                      "name": "Matthew Stevens"
+                    }
+                  ]
+                },
+                {
+                  "name": "Ronnie O\u0027Sullivan",
+                  "challengers": [
+                    {
+                      "name": "Ronnie O\u0027Sullivan"
+                    },
+                    {
+                      "name": "Craig Steadman"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

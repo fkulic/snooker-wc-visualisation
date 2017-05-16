@@ -1,0 +1,253 @@
+{
+  "name": "Mark Selby",
+  "winners": [
+    {
+      "name": "Ronnie O\u0027Sullivan",
+      "winners": [
+        {
+          "name": "Ronnie O\u0027Sullivan",
+          "winners": [
+            {
+              "name": "Ronnie O\u0027Sullivan",
+              "winners": [
+                {
+                  "name": "Ronnie O\u0027Sullivan",
+                  "winners": [
+                    {
+                      "name": "Ronnie O\u0027Sullivan"
+                    },
+                    {
+                      "name": "Robin Hull"
+                    }
+                  ]
+                },
+                {
+                  "name": "Joe Perry",
+                  "winners": [
+                    {
+                      "name": "Joe Perry"
+                    },
+                    {
+                      "name": "Jamie Burnett"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Shaun Murphy",
+              "winners": [
+                {
+                  "name": "Shaun Murphy",
+                  "winners": [
+                    {
+                      "name": "Shaun Murphy"
+                    },
+                    {
+                      "name": "Jamie Cope"
+                    }
+                  ]
+                },
+                {
+                  "name": "Marco Fu",
+                  "winners": [
+                    {
+                      "name": "Marco Fu"
+                    },
+                    {
+                      "name": "Martin Gould"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Barry Hawkins",
+          "winners": [
+            {
+              "name": "Barry Hawkins",
+              "winners": [
+                {
+                  "name": "Barry Hawkins",
+                  "winners": [
+                    {
+                      "name": "Barry Hawkins"
+                    },
+                    {
+                      "name": "David Gilbert"
+                    }
+                  ]
+                },
+                {
+                  "name": "Ricky Walden",
+                  "winners": [
+                    {
+                      "name": "Ricky Walden"
+                    },
+                    {
+                      "name": "Kyren Wilson"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dominic Dale",
+              "winners": [
+                {
+                  "name": "Dominic Dale",
+                  "winners": [
+                    {
+                      "name": "Mark Davis"
+                    },
+                    {
+                      "name": "Dominic Dale"
+                    }
+                  ]
+                },
+                {
+                  "name": "Michael Wasley",
+                  "winners": [
+                    {
+                      "name": "Junhui Ding"
+                    },
+                    {
+                      "name": "Michael Wasley"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "challengers": [
+    {
+      "name": "Mark Selby",
+      "challengers": [
+        {
+          "name": "Mark Selby",
+          "challengers": [
+            {
+              "name": "Mark Selby",
+              "challengers": [
+                {
+                  "name": "Mark Selby",
+                  "challengers": [
+                    {
+                      "name": "Mark Selby"
+                    },
+                    {
+                      "name": "Michael White"
+                    }
+                  ]
+                },
+                {
+                  "name": "Allister Carter",
+                  "challengers": [
+                    {
+                      "name": "Allister Carter"
+                    },
+                    {
+                      "name": "Guodong Xiao"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Alan McManus",
+              "challengers": [
+                {
+                  "name": "Alan McManus",
+                  "challengers": [
+                    {
+                      "name": "John Higgins"
+                    },
+                    {
+                      "name": "Alan McManus"
+                    }
+                  ]
+                },
+                {
+                  "name": "Ken Doherty",
+                  "challengers": [
+                    {
+                      "name": "Stuart Bingham"
+                    },
+                    {
+                      "name": "Ken Doherty"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Neil Robertson",
+          "challengers": [
+            {
+              "name": "Judd Trump",
+              "challengers": [
+                {
+                  "name": "Judd Trump",
+                  "challengers": [
+                    {
+                      "name": "Judd Trump"
+                    },
+                    {
+                      "name": "Tom Ford"
+                    }
+                  ]
+                },
+                {
+                  "name": "Ryan Day",
+                  "challengers": [
+                    {
+                      "name": "Stephen Maguire"
+                    },
+                    {
+                      "name": "Ryan Day"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Neil Robertson",
+              "challengers": [
+                {
+                  "name": "Mark Allen",
+                  "challengers": [
+                    {
+                      "name": "Mark Allen"
+                    },
+                    {
+                      "name": "Michael Holt"
+                    }
+                  ]
+                },
+                {
+                  "name": "Neil Robertson",
+                  "challengers": [
+                    {
+                      "name": "Neil Robertson"
+                    },
+                    {
+                      "name": "Robbie Williams"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
