@@ -1,19 +1,25 @@
+h1 {
+    text-align: center;
+}
+h3, #yearSelection {
+    display: inline-block;
+}
 #chart {
-  text-align: center;
+    text-align: center;
 }
 .node circle {
-  cursor: pointer;
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+    cursor: pointer;
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
 }
 
 .node text {
-  font: 10px sans-serif;
+    font: 10px sans-serif;
 }
 
 path.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
 }

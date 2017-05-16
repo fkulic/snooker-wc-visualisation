@@ -1,0 +1,253 @@
+{
+  "name": "Mark Selby",
+  "winners": [
+    {
+      "name": "Junhui Ding",
+      "winners": [
+        {
+          "name": "Alan McManus",
+          "winners": [
+            {
+              "name": "Alan McManus",
+              "winners": [
+                {
+                  "name": "Allister Carter",
+                  "winners": [
+                    {
+                      "name": "Stuart Bingham"
+                    },
+                    {
+                      "name": "Allister Carter"
+                    }
+                  ]
+                },
+                {
+                  "name": "Alan McManus",
+                  "winners": [
+                    {
+                      "name": "Stephen Maguire"
+                    },
+                    {
+                      "name": "Alan McManus"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "John Higgins",
+              "winners": [
+                {
+                  "name": "Ricky Walden",
+                  "winners": [
+                    {
+                      "name": "Ricky Walden"
+                    },
+                    {
+                      "name": "Robbie Williams"
+                    }
+                  ]
+                },
+                {
+                  "name": "John Higgins",
+                  "winners": [
+                    {
+                      "name": "John Higgins"
+                    },
+                    {
+                      "name": "Ryan Day"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Junhui Ding",
+          "winners": [
+            {
+              "name": "Junhui Ding",
+              "winners": [
+                {
+                  "name": "Judd Trump",
+                  "winners": [
+                    {
+                      "name": "Judd Trump"
+                    },
+                    {
+                      "name": "Wenbo Liang"
+                    }
+                  ]
+                },
+                {
+                  "name": "Junhui Ding",
+                  "winners": [
+                    {
+                      "name": "Martin Gould"
+                    },
+                    {
+                      "name": "Junhui Ding"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Mark Williams",
+              "winners": [
+                {
+                  "name": "Mark Williams",
+                  "winners": [
+                    {
+                      "name": "Mark Williams"
+                    },
+                    {
+                      "name": "Graeme Dott"
+                    }
+                  ]
+                },
+                {
+                  "name": "Michael Holt",
+                  "winners": [
+                    {
+                      "name": "Neil Robertson"
+                    },
+                    {
+                      "name": "Michael Holt"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "challengers": [
+    {
+      "name": "Mark Selby",
+      "challengers": [
+        {
+          "name": "Marco Fu",
+          "challengers": [
+            {
+              "name": "Marco Fu",
+              "challengers": [
+                {
+                  "name": "Anthony McGill",
+                  "challengers": [
+                    {
+                      "name": "Shaun Murphy"
+                    },
+                    {
+                      "name": "Anthony McGill"
+                    }
+                  ]
+                },
+                {
+                  "name": "Marco Fu",
+                  "challengers": [
+                    {
+                      "name": "Marco Fu"
+                    },
+                    {
+                      "name": "Peter Ebdon"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Barry Hawkins",
+              "challengers": [
+                {
+                  "name": "Barry Hawkins",
+                  "challengers": [
+                    {
+                      "name": "Barry Hawkins"
+                    },
+                    {
+                      "name": "Anda Zhang"
+                    }
+                  ]
+                },
+                {
+                  "name": "Ronnie O\u0027Sullivan",
+                  "challengers": [
+                    {
+                      "name": "Ronnie O\u0027Sullivan"
+                    },
+                    {
+                      "name": "David Gilbert"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mark Selby",
+          "challengers": [
+            {
+              "name": "Kyren Wilson",
+              "challengers": [
+                {
+                  "name": "Mark Allen",
+                  "challengers": [
+                    {
+                      "name": "Mark Allen"
+                    },
+                    {
+                      "name": "Mitchell Mann"
+                    }
+                  ]
+                },
+                {
+                  "name": "Kyren Wilson",
+                  "challengers": [
+                    {
+                      "name": "Joe Perry"
+                    },
+                    {
+                      "name": "Kyren Wilson"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Mark Selby",
+              "challengers": [
+                {
+                  "name": "Sam Baird",
+                  "challengers": [
+                    {
+                      "name": "Michael White"
+                    },
+                    {
+                      "name": "Sam Baird"
+                    }
+                  ]
+                },
+                {
+                  "name": "Mark Selby",
+                  "challengers": [
+                    {
+                      "name": "Mark Selby"
+                    },
+                    {
+                      "name": "Robert Milkins"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
