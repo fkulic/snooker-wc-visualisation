@@ -1,25 +1,61 @@
+body {
+    background: #99ff99;
+}
+header {
+    text-align: center;
+    margin: 3% 15% 50px;
+}
 h1 {
+    font-family: "Khula", sans-serif;
+    font-weight: 100;
+    font-size: 2.5em;
+    text-transform: uppercase;
     text-align: center;
+    margin-bottom: 10px;
 }
-h3, #yearSelection {
+header nav {
+    border-bottom: 3px solid #ff4d4d;
+}
+ul {
     display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
-#chart {
+li {
+    border-bottom: 5px solid rgba(0, 0, 0, 0);
+    display: inline-block;
+    color: #333;
     text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Khula", sans-serif;
+    font-size: 1.3em;
+}
+li:hover {
+    border-bottom: 3px solid #666;
+}
+.selected {
+    font-weight: bold;
+    color: #ff4d4d;
+}
+#bracketsChart {
+    text-align: center;
+}
+.node {
+    cursor: pointer;
+}
+.node text {
+    font: 0.8em sans-serif;
 }
 .node circle {
-    cursor: pointer;
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 1.5px;
+    fill: #ff4d4d;
+    display: none;
 }
-
-.node text {
-    font: 10px sans-serif;
-}
-
 path.link {
     fill: none;
-    stroke: #ccc;
-    stroke-width: 1.5px;
+    stroke: #666;
+    stroke-width: 2px;
 }
