@@ -50,10 +50,6 @@ li:hover {
 .node text {
     font: 0.8em sans-serif;
 }
-.node circle {
-    fill: #ff4d4d;
-    display: none;
-}
 path.link {
     fill: none;
     stroke: #666;
