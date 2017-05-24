@@ -45,12 +45,13 @@ li:hover {
     text-align: center;
 }
 #imgContainer {
+    max-width: 220px;
+    position: absolute;
+    top: 238px;
+    left: 50%;
     background-color: #ff4d4d;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    max-width: 220px;
-    position: relative;
-    bottom: 610px;
-    margin: auto;
+    margin-left: -110px;
     z-index: -1;
     padding-bottom: 30px;
     border-radius: 8px;
@@ -83,9 +84,11 @@ path.link {
     stroke-width: 2px;
 }
 #slider {
-    position: relative;
-    bottom: 350px;
-    margin: 0 auto;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 750px;
+    margin-left: -225px;;
 }
 .d3slider {
     width: 450px;
