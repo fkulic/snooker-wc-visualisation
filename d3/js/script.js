@@ -222,8 +222,8 @@ function setupSlider() {
     document.getElementById("slider").innerHTML = "";
 
     // Create new slider
-    slider = d3.slider().
-    min(0).max(5)
+    slider = d3.slider()
+    .min(0).max(5)
     .ticks(6).stepValues([0,1,2,3,4,5])
     .showRange(true)
     .tickFormat(tickFormatter)
