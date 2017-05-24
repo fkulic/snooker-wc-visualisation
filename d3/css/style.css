@@ -55,3 +55,17 @@ path.link {
     stroke: #666;
     stroke-width: 2px;
 }
+#slider {
+    position: relative;
+    bottom: 100px;
+    margin: 0 auto;
+}
+.d3slider {
+  width: 450px;
+}
+.d3slider-rect-value {
+  fill: #ff4d4d;
+}
+.d3slider text {
+  font: 0.7em sans-serif;
+}

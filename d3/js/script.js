@@ -6,6 +6,34 @@ var duration = 500;
 var root;
 var names;
 
+// tick formater for slider
+var tickFormatter = function(d) {
+    switch(d) {
+        case 0:
+        case 1:
+        return "Round " + d;
+        case 2:
+        return "QuarterFinals";
+        case 3:
+        return "SemiFinals";
+        case 4:
+        return "Finals";
+        case 5:
+        return "Winner";
+    }
+}
+// initialize slider
+var slider = d3.slider().
+min(0).max(5)
+.ticks(6).stepValues([0,1,2,3,4,5])
+.showRange(true)
+.tickFormat(tickFormatter)
+.value(5)
+.callback(function() {
+    showHideTiers(5 - slider.value());
+});
+d3.select('#slider').call(slider);
+
 var getChildren = function(d){
     var a = [];
     if(d.winners) {
@@ -28,6 +56,8 @@ var getChildren = function(d){
 var tree = d3.layout.tree()
 .size([height, width]);
 
+
+// elbow connector
 var connector = function (d, i){
     var source = calcLeft(d.source);
     var target = calcLeft(d.target);
@@ -35,16 +65,16 @@ var connector = function (d, i){
     if(d.isRight) {
         hy = -hy;
     }
-    return  "M" + source.y + "," + source.x +
-    "H" + (source.y + hy) +
-    "V" + target.x + "H" + target.y;
+    return  "M" + source.y + " " + source.x + " " +
+    "H" + (source.y + hy) + " " +
+    "V" + target.x + " " +
+    "H" + target.y;
 };
 
 var calcLeft = function(d){
     var l = d.y;
     if(!d.isRight){
-        l = d.y-halfWidth;
-        l = halfWidth - l;
+        l = width- d.y;
     }
     return {x : d.x, y : l};
 };
@@ -99,7 +129,6 @@ var toArray = function(item, arr){
     return arr;
 };
 
-var tier = 5;
 function update(source) {
     // Compute the new tree layout.
     var nodes = toArray(source);
@@ -190,14 +219,17 @@ function update(source) {
         update(source);
     }
 }
-function changeTier(value) {
-    if (!((tier == 5 && value > 0) || (tier == 0 && value < 0))) {
-        tier += value;
-    }
-    showHideTiers();
-}
+// var tier = 5;
+// for buttons - onclick listener
+// function changeTierForButtons(value) {
+//     if (!((tier == 5 && value > 0) || (tier == 0 && value < 0))) {
+//         tier += value;
+//     }
+//     showHideTiers();
+// }
+// function showHideTiers() {
 
-function showHideTiers() {
+function showHideTiers(tier) {
     names.transition()
     .duration(duration)
     .style("fill-opacity", function(d) {
