@@ -5,13 +5,11 @@ var i = 0;
 var duration = 500;
 var root;
 var names;
+var slider;
 
-// tick formater for slider
+// Tick formater for slider
 var tickFormatter = function(d) {
     switch(d) {
-        case 0:
-        case 1:
-        return "Round " + d;
         case 2:
         return "QuarterFinals";
         case 3:
@@ -20,45 +18,38 @@ var tickFormatter = function(d) {
         return "Finals";
         case 5:
         return "Winner";
+        default:
+        return "Round " + (d + 1);
     }
 }
-// initialize slider
-var slider = d3.slider().
-min(0).max(5)
-.ticks(6).stepValues([0,1,2,3,4,5])
-.showRange(true)
-.tickFormat(tickFormatter)
-.value(5)
-.callback(function() {
-    showHideTiers(5 - slider.value());
-});
-d3.select('#slider').call(slider);
+// Initialize slider
+setupSlider();
 
-var getChildren = function(d){
+var getChildren = function(d) {
     var a = [];
     if(d.winners) {
-        for(var i = 0; i < d.winners.length; i++){
+        for(var i = 0; i < d.winners.length; i++) {
             d.winners[i].isRight = false;
             d.winners[i].parent = d;
             a.push(d.winners[i]);
         }
     }
     if(d.challengers) {
-        for(var i = 0; i < d.challengers.length; i++){
+        for(var i = 0; i < d.challengers.length; i++) {
             d.challengers[i].isRight = true;
             d.challengers[i].parent = d;
             a.push(d.challengers[i]);
         }
     }
-    return a.length?a:null;
+    return a.length ? a : null;
 };
 
 var tree = d3.layout.tree()
 .size([height, width]);
 
 
-// elbow connector
-var connector = function (d, i){
+// Elbow connector
+var connector = function(d, i) {
     var source = calcLeft(d.source);
     var target = calcLeft(d.target);
     var hy = (target.y-source.y)/2;
@@ -71,7 +62,7 @@ var connector = function (d, i){
     "H" + target.y;
 };
 
-var calcLeft = function(d){
+var calcLeft = function(d) {
     var l = d.y;
     if(!d.isRight){
         l = width- d.y;
@@ -94,6 +85,10 @@ var years = d3.selectAll("#yearSelection li")
     this.classList.add("selected");
     yearValue = "wc" + this.innerHTML;
     drawStructure();
+
+    document.querySelector("#imgContainer img").src = "images/winner_" + this.innerHTML + ".jpg";
+    // Reset slider
+    setupSlider();
 });
 
 function drawStructure() {
@@ -107,7 +102,7 @@ function drawStructure() {
         t1.nodes(root);
         t2.nodes(root);
 
-        var rebuildChildren = function(node){
+        var rebuildChildren = function(node) {
             node.children = getChildren(node);
             if(node.children) {
                 node.children.forEach(rebuildChildren);
@@ -119,7 +114,8 @@ function drawStructure() {
     });
 }
 
-var toArray = function(item, arr){
+// JSON to array
+var toArray = function(item, arr) {
     arr = arr || [];
     var i = 0, l = item.children?item.children.length:0;
     arr.push(item);
@@ -144,19 +140,24 @@ function update(source) {
     var nodeEnter = node.enter().append("g")
     .attr("class", "node")
     .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-    // .on("click", click);
     .on("mouseover", highlightNames)
     .on("mouseleave", dehighlightNames);
 
+    // Append names
     names = nodeEnter.append("text")
     .attr("dy", -7)
     .attr("text-anchor", "middle")
-    .attr("data-tier", function(d) {
-        return d.depth;
-    })
     .text(function(d) {
         return d.name;
     });
+
+
+    // Move winner up and change font-size
+    names.filter(function(d) {
+        return d.depth == 0;
+    })
+    .attr("dy", -65)
+    .style("font", "1.5em sans-serif");
 
     // Transition nodes to their new position.
     var nodeUpdate = node.transition()
@@ -206,29 +207,36 @@ function update(source) {
         d.x0 = p.x;
         d.y0 = p.y;
     });
-
-    // Toggle children on click.
-    function click(d) {
-        if (d.children) {
-            d._children = d.children;
-            d.children = null;
-        } else {
-            d.children = d._children;
-            d._children = null;
-        }
-        update(source);
-    }
 }
-// var tier = 5;
-// for buttons - onclick listener
-// function changeTierForButtons(value) {
-//     if (!((tier == 5 && value > 0) || (tier == 0 && value < 0))) {
-//         tier += value;
-//     }
-//     showHideTiers();
-// }
-// function showHideTiers() {
 
+function setupSlider() {
+    // Remove old slider
+    document.getElementById("slider").innerHTML = "";
+
+    // Create new slider
+    slider = d3.slider().
+    min(0).max(5)
+    .ticks(6).stepValues([0,1,2,3,4,5])
+    .showRange(true)
+    .tickFormat(tickFormatter)
+    .value(5)
+    .callback(function() {
+        // show/hide image
+        var imgContainer = document.getElementById("imgContainer");
+
+        if(slider.value() == 5) {
+            imgContainer.className = "imgContainer fadeIn";
+        } else {
+            imgContainer.className = "imgContainer fadeOut";
+        }
+        showHideTiers(5 - slider.value());
+    });
+
+    // Place slider inside div
+    d3.select('#slider').call(slider);
+}
+
+// Show/Hide tiers depending on positions of slider
 function showHideTiers(tier) {
     names.transition()
     .duration(duration)
@@ -248,21 +256,20 @@ function showHideTiers(tier) {
 
         return opacity;
     });
-    // .style("display", function(d) {
-    //     if(d.depth >= tier)
-    //         return "block";
-    //     return "none";
-    // });
 }
 
+// Highlight names on mouseover
 function highlightNames(d) {
     d3.selectAll(".node text").filter(function() {
         return d.name == this.innerHTML;
     })
-    .style("fill", "red")
+    .style("fill", function(d) {
+        return d.depth == 0 ? "black" : "red";
+    })
     .style("font-weight", "bold");
 }
 
+// Restore styling on mouseleave
 function dehighlightNames(d) {
     d3.selectAll(".node text")
     .style("fill", "black")

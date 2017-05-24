@@ -44,6 +44,33 @@ li:hover {
 #bracketsChart {
     text-align: center;
 }
+#imgContainer {
+    background-color: #ff4d4d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 220px;
+    position: relative;
+    bottom: 610px;
+    margin: auto;
+    z-index: -1;
+    padding-bottom: 30px;
+    border-radius: 8px;
+}
+img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+}
+.fadeIn {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+}
+.fadeOut {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+}
 .node {
     cursor: pointer;
 }
@@ -57,15 +84,15 @@ path.link {
 }
 #slider {
     position: relative;
-    bottom: 100px;
+    bottom: 350px;
     margin: 0 auto;
 }
 .d3slider {
-  width: 450px;
+    width: 450px;
 }
 .d3slider-rect-value {
-  fill: #ff4d4d;
+    fill: #ff4d4d;
 }
 .d3slider text {
-  font: 0.7em sans-serif;
+    font: 0.7em sans-serif;
 }
