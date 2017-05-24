@@ -6,6 +6,11 @@ var duration = 500;
 var root;
 var names;
 var slider;
+var imgContainer;
+
+window.onload = function() {
+    imgContainer = document.getElementById("imgContainer");
+}
 
 // Tick formater for slider
 var tickFormatter = function(d) {
@@ -86,7 +91,10 @@ var years = d3.selectAll("#yearSelection li")
     yearValue = "wc" + this.innerHTML;
     drawStructure();
 
+    // change image
     document.querySelector("#imgContainer img").src = "images/winner_" + this.innerHTML + ".jpg";
+    imgContainer.className = "fadeIn";
+
     // Reset slider
     setupSlider();
 });
@@ -222,12 +230,10 @@ function setupSlider() {
     .value(5)
     .callback(function() {
         // show/hide image
-        var imgContainer = document.getElementById("imgContainer");
-
         if(slider.value() == 5) {
-            imgContainer.className = "imgContainer fadeIn";
+            imgContainer.className = "fadeIn";
         } else {
-            imgContainer.className = "imgContainer fadeOut";
+            imgContainer.className = "fadeOut";
         }
         showHideTiers(5 - slider.value());
     });
