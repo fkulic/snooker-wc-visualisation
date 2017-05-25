@@ -3,32 +3,41 @@
   "winners": [
     {
       "name": "Mark Selby",
+      "score": 18,
       "winners": [
         {
           "name": "Mark Selby",
+          "score": 17,
           "winners": [
             {
               "name": "Mark Selby",
+              "score": 13,
               "winners": [
                 {
                   "name": "Mark Selby",
+                  "score": 13,
                   "winners": [
                     {
-                      "name": "Mark Selby"
+                      "name": "Mark Selby",
+                      "score": 10
                     },
                     {
-                      "name": "Fergal O\u0027Brien"
+                      "name": "Fergal O\u0027Brien",
+                      "score": 2
                     }
                   ]
                 },
                 {
                   "name": "Guodong Xiao",
+                  "score": 6,
                   "winners": [
                     {
-                      "name": "Ryan Day"
+                      "name": "Ryan Day",
+                      "score": 4
                     },
                     {
-                      "name": "Guodong Xiao"
+                      "name": "Guodong Xiao",
+                      "score": 10
                     }
                   ]
                 }
@@ -36,26 +45,33 @@
             },
             {
               "name": "Marco Fu",
+              "score": 3,
               "winners": [
                 {
                   "name": "Neil Robertson",
+                  "score": 11,
                   "winners": [
                     {
-                      "name": "Neil Robertson"
+                      "name": "Neil Robertson",
+                      "score": 10
                     },
                     {
-                      "name": "Noppon Saengkham"
+                      "name": "Noppon Saengkham",
+                      "score": 4
                     }
                   ]
                 },
                 {
                   "name": "Marco Fu",
+                  "score": 13,
                   "winners": [
                     {
-                      "name": "Marco Fu"
+                      "name": "Marco Fu",
+                      "score": 10
                     },
                     {
-                      "name": "Luca Brecel"
+                      "name": "Luca Brecel",
+                      "score": 9
                     }
                   ]
                 }
@@ -65,29 +81,37 @@
         },
         {
           "name": "Junhui Ding",
+          "score": 15,
           "winners": [
             {
               "name": "Ronnie O\u0027Sullivan",
+              "score": 10,
               "winners": [
                 {
                   "name": "Shaun Murphy",
+                  "score": 7,
                   "winners": [
                     {
-                      "name": "Shaun Murphy"
+                      "name": "Shaun Murphy",
+                      "score": 10
                     },
                     {
-                      "name": "Bingtao Yan"
+                      "name": "Bingtao Yan",
+                      "score": 8
                     }
                   ]
                 },
                 {
                   "name": "Ronnie O\u0027Sullivan",
+                  "score": 13,
                   "winners": [
                     {
-                      "name": "Ronnie O\u0027Sullivan"
+                      "name": "Ronnie O\u0027Sullivan",
+                      "score": 10
                     },
                     {
-                      "name": "Gary Wilson"
+                      "name": "Gary Wilson",
+                      "score": 7
                     }
                   ]
                 }
@@ -95,26 +119,33 @@
             },
             {
               "name": "Junhui Ding",
+              "score": 13,
               "winners": [
                 {
                   "name": "Wenbo Liang",
+                  "score": 12,
                   "winners": [
                     {
-                      "name": "Wenbo Liang"
+                      "name": "Wenbo Liang",
+                      "score": 10
                     },
                     {
-                      "name": "Stuart Carrington"
+                      "name": "Stuart Carrington",
+                      "score": 7
                     }
                   ]
                 },
                 {
                   "name": "Junhui Ding",
+                  "score": 13,
                   "winners": [
                     {
-                      "name": "Junhui Ding"
+                      "name": "Junhui Ding",
+                      "score": 10
                     },
                     {
-                      "name": "Yuelong Zhou"
+                      "name": "Yuelong Zhou",
+                      "score": 5
                     }
                   ]
                 }
@@ -128,32 +159,41 @@
   "challengers": [
     {
       "name": "John Higgins",
+      "score": 15,
       "challengers": [
         {
           "name": "John Higgins",
+          "score": 17,
           "challengers": [
             {
               "name": "Kyren Wilson",
+              "score": 6,
               "challengers": [
                 {
                   "name": "Stuart Bingham",
+                  "score": 10,
                   "challengers": [
                     {
-                      "name": "Stuart Bingham"
+                      "name": "Stuart Bingham",
+                      "score": 10
                     },
                     {
-                      "name": "Peter Ebdon"
+                      "name": "Peter Ebdon",
+                      "score": 5
                     }
                   ]
                 },
                 {
                   "name": "Kyren Wilson",
+                  "score": 13,
                   "challengers": [
                     {
-                      "name": "Kyren Wilson"
+                      "name": "Kyren Wilson",
+                      "score": 10
                     },
                     {
-                      "name": "David Grace"
+                      "name": "David Grace",
+                      "score": 6
                     }
                   ]
                 }
@@ -161,26 +201,33 @@
             },
             {
               "name": "John Higgins",
+              "score": 13,
               "challengers": [
                 {
                   "name": "Mark Allen",
+                  "score": 9,
                   "challengers": [
                     {
-                      "name": "Mark Allen"
+                      "name": "Mark Allen",
+                      "score": 10
                     },
                     {
-                      "name": "Jimmy Robertson"
+                      "name": "Jimmy Robertson",
+                      "score": 8
                     }
                   ]
                 },
                 {
                   "name": "John Higgins",
+                  "score": 13,
                   "challengers": [
                     {
-                      "name": "John Higgins"
+                      "name": "John Higgins",
+                      "score": 10
                     },
                     {
-                      "name": "Martin Gould"
+                      "name": "Martin Gould",
+                      "score": 6
                     }
                   ]
                 }
@@ -190,29 +237,37 @@
         },
         {
           "name": "Barry Hawkins",
+          "score": 8,
           "challengers": [
             {
               "name": "Barry Hawkins",
+              "score": 13,
               "challengers": [
                 {
                   "name": "Barry Hawkins",
+                  "score": 13,
                   "challengers": [
                     {
-                      "name": "Barry Hawkins"
+                      "name": "Barry Hawkins",
+                      "score": 10
                     },
                     {
-                      "name": "Tom Ford"
+                      "name": "Tom Ford",
+                      "score": 3
                     }
                   ]
                 },
                 {
                   "name": "Graeme Dott",
+                  "score": 6,
                   "challengers": [
                     {
-                      "name": "Allister Carter"
+                      "name": "Allister Carter",
+                      "score": 7
                     },
                     {
-                      "name": "Graeme Dott"
+                      "name": "Graeme Dott",
+                      "score": 10
                     }
                   ]
                 }
@@ -220,26 +275,33 @@
             },
             {
               "name": "Stephen Maguire",
+              "score": 9,
               "challengers": [
                 {
                   "name": "Stephen Maguire",
+                  "score": 13,
                   "challengers": [
                     {
-                      "name": "Anthony McGill"
+                      "name": "Anthony McGill",
+                      "score": 2
                     },
                     {
-                      "name": "Stephen Maguire"
+                      "name": "Stephen Maguire",
+                      "score": 10
                     }
                   ]
                 },
                 {
                   "name": "Rory McLeod",
+                  "score": 3,
                   "challengers": [
                     {
-                      "name": "Judd Trump"
+                      "name": "Judd Trump",
+                      "score": 8
                     },
                     {
-                      "name": "Rory McLeod"
+                      "name": "Rory McLeod",
+                      "score": 10
                     }
                   ]
                 }

@@ -64,7 +64,7 @@ var connector = function(d, i) {
     return  "M" + source.y + " " + source.x + " " +
     "H" + (source.y + hy) + " " +
     "V" + target.x + " " +
-    "H" + target.y;
+    "H" + (target.y);
 };
 
 var calcLeft = function(d) {
@@ -137,8 +137,20 @@ function update(source) {
     // Compute the new tree layout.
     var nodes = toArray(source);
 
+    //$Recycle.Bin\
+    var isUp = [true, true, true, true];
+    nodes.forEach(function(d) {
+        var index = d.depth - 2;
+        if(index >= 0) {
+            d.isUp = isUp[index];
+            isUp[index] = !isUp[index];
+        }
+    });
+
     // Normalize for fixed-depth.
-    nodes.forEach(function(d) { d.y = d.depth * 120 + halfWidth; });
+    nodes.forEach(function(d) {
+        d.y = d.depth * 120 + halfWidth;
+    });
 
     // Update the nodes…
     var node = vis.selectAll("g.node")
@@ -153,10 +165,29 @@ function update(source) {
 
     // Append names
     names = nodeEnter.append("text")
-    .attr("dy", -7)
+    .attr("dy", function(d) {
+        return (d.isUp || d.depth < 2) ? -7 : 15;
+    })
     .attr("text-anchor", "middle")
     .text(function(d) {
-        return d.name;
+            return d.name;
+    });
+
+
+    nodeEnter.append("text")
+    .attr("text-anchor", function(d) {
+        return d.isRight ? "start" : "end";
+    })
+    .attr("dy", function(d) {
+        return (d.isUp || d.depth < 2) ? -7 : 15;
+    })
+    .attr("dx", function(d) {
+        return d.isRight ? -72 : 72;
+    })
+    .text(function(d) {
+        if(d.depth != 0) {
+            return d.score;
+        }
     });
 
 
@@ -164,6 +195,8 @@ function update(source) {
     names.filter(function(d) {
         return d.depth == 0;
     })
+    .attr("text-anchor", "middle")
+    .attr("dx", 0)
     .attr("dy", -65)
     .style("font", "1.5em sans-serif");
 
