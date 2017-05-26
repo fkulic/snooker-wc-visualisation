@@ -1,6 +1,6 @@
 var margin = {top: 20, right: 10, bottom: 10, left: 10};
 var width = 1500 - margin.left - margin.right, halfWidth = width / 2;
-var height = 600 - margin.top - margin.bottom;
+var height = 650 - margin.top - margin.bottom;
 var i = 0;
 var duration = 500;
 var root;
@@ -166,30 +166,37 @@ function update(source) {
 
     // Append names
     names = nodeEnter.append("text")
+    .attr("class", "name")
     .attr("dy", function(d) {
         return (d.isUp || d.depth < 2) ? -7 : 15;
     })
     .attr("text-anchor", "middle")
     .text(function(d) {
-            return d.name;
+        return d.name;
     });
 
-
+    // Append scores
     scores = nodeEnter.append("text")
     .attr("text-anchor", function(d) {
+        if(d.depth == 0) {
+            return "middle";
+        }
         return d.isRight ? "start" : "end";
     })
-    .attr("dy", function(d) {
-        return (d.isUp || d.depth < 2) ? -7 : 15;
-    })
     .attr("dx", function(d) {
-        return d.isRight ? -72 : 72;
+        if(d.depth != 0) {
+            return d.isRight ? 105 : -105;
+        }
+    })
+    .attr("dy", function(d) {
+        return d.depth == 0 ? -7 : 5;
     })
     .text(function(d) {
-        if(d.depth != 0) {
-            return d.score;
+        if(d.children != null) {
+            return d.children[0].score + " - " + d.children[1].score;
         }
-    });
+    })
+    .style("font-weight", 'bold');
 
 
     // Move winner up and change font-size
@@ -198,7 +205,7 @@ function update(source) {
     })
     .attr("text-anchor", "middle")
     .attr("dx", 0)
-    .attr("dy", -65)
+    .attr("dy", -90)
     .style("font", "1.5em sans-serif");
 
     // Transition nodes to their new position.
@@ -303,7 +310,7 @@ function showHideTiers(tier) {
         var display = "none";
         var opacity = "0";
 
-        if(d.depth > tier) {
+        if(d.depth >= tier) {
             display = "block";
             opacity = "1";
         }
@@ -319,7 +326,7 @@ function showHideTiers(tier) {
 
 // Highlight names on mouseover
 function highlightNames(d) {
-    d3.selectAll(".node text").filter(function() {
+    d3.selectAll(".node text.name").filter(function() {
         return d.name == this.innerHTML;
     })
     .style("fill", function(d) {
@@ -330,7 +337,7 @@ function highlightNames(d) {
 
 // Restore styling on mouseleave
 function dehighlightNames(d) {
-    d3.selectAll(".node text")
+    d3.selectAll(".node text.name")
     .style("fill", "black")
     .style("font-weight", "normal");
 }
