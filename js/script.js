@@ -1,5 +1,5 @@
 var margin = {top: 20, right: 10, bottom: 10, left: 10};
-var width = 1500 - margin.left - margin.right, halfWidth = width / 2;
+var width = 1500 - margin.left - margin.right;
 var height = 650 - margin.top - margin.bottom;
 var i = 0;
 var duration = 500;
@@ -8,28 +8,42 @@ var names;
 var scores;
 var slider;
 var imgContainer;
+var yearValue  = "wc2017";
 
 window.onload = function() {
     imgContainer = document.getElementById("imgContainer");
-}
+};
 
-// Tick formater for slider
-var tickFormatter = function(d) {
-    switch(d) {
-        case 2:
-        return "QuarterFinals";
-        case 3:
-        return "SemiFinals";
-        case 4:
-        return "Finals";
-        case 5:
-        return "Winner";
-        default:
-        return "Round " + (d + 1);
-    }
-}
+// Navigation - year selection
+var years = d3.selectAll("#yearSelection li")
+.on("click", function() {
+    years.classed("selected", false);
+    this.classList.add("selected");
+    yearValue = "wc" + this.innerHTML;
+    bulildTreeStructure();
+
+    // change image
+    document.querySelector("#imgContainer img").src = "images/winner_" + this.innerHTML + ".jpg";
+    imgContainer.className = "fadeIn";
+
+    // Reset slider
+    setupSlider();
+});
+
 // Initialize slider
 setupSlider();
+
+var tree = d3.layout.tree()
+.size([height, width]);
+
+// Create SVG for visualisation
+var vis = d3.select("#bracketsChart").append("svg")
+.attr("width", width + margin.right + margin.left)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+bulildTreeStructure();
 
 var getChildren = function(d) {
     var a = [];
@@ -49,10 +63,6 @@ var getChildren = function(d) {
     }
     return a.length ? a : null;
 };
-
-var tree = d3.layout.tree()
-.size([height, width]);
-
 
 // Elbow connector
 var connector = function(d, i) {
@@ -76,38 +86,17 @@ var calcLeft = function(d) {
     return {x : d.x, y : l};
 };
 
-var vis = d3.select("#bracketsChart").append("svg")
-.attr("width", width + margin.right + margin.left)
-.attr("height", height + margin.top + margin.bottom)
-.append("g")
-.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-var yearValue  = "wc2017";
-drawStructure();
-
-var years = d3.selectAll("#yearSelection li")
-.on("click", function() {
-    years.classed("selected", false);
-    this.classList.add("selected");
-    yearValue = "wc" + this.innerHTML;
-    drawStructure();
-
-    // change image
-    document.querySelector("#imgContainer img").src = "images/winner_" + this.innerHTML + ".jpg";
-    imgContainer.className = "fadeIn";
-
-    // Reset slider
-    setupSlider();
-});
-
-function drawStructure() {
+function bulildTreeStructure() {
     d3.json("json-data/" + yearValue + ".json", function(json) {
         root = json;
         root.x0 = height / 2;
         root.y0 = width / 2;
 
-        var t1 = d3.layout.tree().size([height, halfWidth]).children(function(d){return d.winners;}),
-        t2 = d3.layout.tree().size([height, halfWidth]).children(function(d){return d.challengers;});
+        // Left side
+        var t1 = d3.layout.tree().size([height, (width/2)]).children(function(d){return d.winners;});
+        // Right side
+        var t2 = d3.layout.tree().size([height, (width/2)]).children(function(d){return d.challengers;});
+
         t1.nodes(root);
         t2.nodes(root);
 
@@ -138,7 +127,7 @@ function update(source) {
     // Compute the new tree layout.
     var nodes = toArray(source);
 
-    //$Recycle.Bin\
+    // Should name be above or below path
     var isUp = [true, true, true, true];
     nodes.forEach(function(d) {
         var index = d.depth - 2;
@@ -148,9 +137,9 @@ function update(source) {
         }
     });
 
-    // Normalize for fixed-depth.
+    // Width between depths/tiers
     nodes.forEach(function(d) {
-        d.y = d.depth * 120 + halfWidth;
+        d.y = d.depth * 120 + (width/2);
     });
 
     // Update the nodes…
@@ -196,7 +185,7 @@ function update(source) {
             return d.children[0].score + " - " + d.children[1].score;
         }
     })
-    .style("font-weight", 'bold');
+    .style("font-weight", "bold");
 
 
     // Move winner up and change font-size
@@ -242,9 +231,9 @@ function update(source) {
     .attr("d", function(d) {
         var o = calcLeft(d.source||source);
         if(d.source.isRight) {
-            o.y -= halfWidth - (d.target.y - d.source.y);
+            o.y -= (width/2) - (d.target.y - d.source.y);
         } else {
-            o.y += halfWidth - (d.target.y - d.source.y);
+            o.y += (width/2) - (d.target.y - d.source.y);
         }
         return connector({source: o, target: o});
     })
@@ -259,6 +248,23 @@ function update(source) {
 }
 
 function setupSlider() {
+
+    // Tick formater for slider
+    var tickFormatter = function(d) {
+        switch(d) {
+            case 2:
+            return "QuarterFinals";
+            case 3:
+            return "SemiFinals";
+            case 4:
+            return "Finals";
+            case 5:
+            return "Winner";
+            default:
+            return "Round " + (d + 1);
+        }
+    }
+
     // Remove old slider
     document.getElementById("slider").innerHTML = "";
 
@@ -280,7 +286,7 @@ function setupSlider() {
     });
 
     // Place slider inside div
-    d3.select('#slider').call(slider);
+    d3.select("#slider").call(slider);
 }
 
 // Show/Hide tiers depending on positions of slider
