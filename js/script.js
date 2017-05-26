@@ -5,6 +5,7 @@ var i = 0;
 var duration = 500;
 var root;
 var names;
+var scores;
 var slider;
 var imgContainer;
 
@@ -174,7 +175,7 @@ function update(source) {
     });
 
 
-    nodeEnter.append("text")
+    scores = nodeEnter.append("text")
     .attr("text-anchor", function(d) {
         return d.isRight ? "start" : "end";
     })
@@ -288,7 +289,26 @@ function showHideTiers(tier) {
             opacity = "1";
         }
 
-        d3.select(".node text").filter(function() {return d.name == this.innerHTML})
+        d3.select(".node text").filter(function() {return d.name == this.innerHTML; })
+        .transition()
+        .delay(duration)
+        .style("display", display);
+
+        return opacity;
+    });
+
+    scores.transition()
+    .duration(duration)
+    .style("fill-opacity", function(d) {
+        var display = "none";
+        var opacity = "0";
+
+        if(d.depth > tier) {
+            display = "block";
+            opacity = "1";
+        }
+
+        d3.select(".node text").filter(function() {return d.score == this.innerHTML; })
         .transition()
         .delay(duration)
         .style("display", display);
