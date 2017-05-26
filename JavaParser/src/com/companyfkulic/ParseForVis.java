@@ -61,28 +61,28 @@ public class ParseForVis {
 
             switch (match.Round) {
                 case 15:
-                    round15.add(new winners(match.player1.getName(), true));
-                    round15.add(new winners(match.player2.getName(), false));
+                    round15.add(new winners(match.player1.getName(), match.Score1, true));
+                    round15.add(new winners(match.player2.getName(), match.Score2, false));
                     break;
 
                 case 14:
-                    round14.add(new winners(match.player1.getName(), hasWinners));
-                    round14.add(new winners(match.player2.getName(), hasWinners));
+                    round14.add(new winners(match.player1.getName(), match.Score1, hasWinners));
+                    round14.add(new winners(match.player2.getName(), match.Score2, hasWinners));
                     break;
 
                 case 13:
-                    round13.add(new winners(match.player1.getName(), hasWinners));
-                    round13.add(new winners(match.player2.getName(), hasWinners));
+                    round13.add(new winners(match.player1.getName(), match.Score1, hasWinners));
+                    round13.add(new winners(match.player2.getName(), match.Score2, hasWinners));
                     break;
 
                 case 8:
-                    round8.add(new winners(match.player1.getName(), hasWinners));
-                    round8.add(new winners(match.player2.getName(), hasWinners));
+                    round8.add(new winners(match.player1.getName(), match.Score1, hasWinners));
+                    round8.add(new winners(match.player2.getName(), match.Score2, hasWinners));
                     break;
 
                 case 7:
-                    round7.add(new winners(match.player1.getName()));
-                    round7.add(new winners(match.player2.getName()));
+                    round7.add(new winners(match.player1.getName(),  match.Score1));
+                    round7.add(new winners(match.player2.getName(),  match.Score2));
                     break;
             }
 

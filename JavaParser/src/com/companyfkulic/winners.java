@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class winners {
     public String name;
+    public Integer score;
     public List<winners> winners;
     public List<winners> challengers;
 
@@ -16,12 +17,14 @@ public class winners {
         this.challengers = new ArrayList<>();
     }
 
-    public winners(String name) {
+    public winners(String name, int score) {
         this.name = name;
+        this.score = score;
     }
 
-    public winners(String name, boolean hasWinners) {
+    public winners(String name, int score, boolean hasWinners) {
         this.name = name;
+        this.score = score;
         if (hasWinners) {
             this.winners = new ArrayList<>();
         } else {
